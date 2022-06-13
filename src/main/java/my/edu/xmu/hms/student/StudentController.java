@@ -1,5 +1,6 @@
 package my.edu.xmu.hms.student;
 
+import my.edu.xmu.hms.token.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
