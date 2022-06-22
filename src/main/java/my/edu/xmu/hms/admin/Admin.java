@@ -16,29 +16,37 @@ public class Admin {
             generator = "admin_sequence"
     )
     private Long seq_id;
-    private String admin_id;
+    private String adminId;
     private String fname;
     private String lname;
     private String name;
-    private String registration_time;
+    private String registrationTime;
 
     public Admin() {
     }
 
-    public Admin(String admin_id, String fname, String lname, String name, String registration_time) {
-        this.admin_id = admin_id;
+    public Admin(String adminId, String fname, String lname, String name, String registrationTime) {
+        this.adminId = adminId;
         this.fname = fname;
         this.lname = lname;
         this.name = name;
-        this.registration_time = registration_time;
+        this.registrationTime = registrationTime;
     }
 
-    public String getAdmin_id() {
-        return admin_id;
+    public String getAdminId() {
+        return adminId;
     }
 
-    public void setAdmin_id(String admin_id) {
-        this.admin_id = admin_id;
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getRegistrationTime() {
+        return registrationTime;
+    }
+
+    public void setRegistrationTime(String registrationTime) {
+        this.registrationTime = registrationTime;
     }
 
     public String getFname() {
@@ -73,23 +81,15 @@ public class Admin {
         this.seq_id = seq_id;
     }
 
-    public String getRegistration_time() {
-        return registration_time;
-    }
-
-    public void setRegistration_time(String registration_time) {
-        this.registration_time = registration_time;
-    }
-
     @Override
     public String toString() {
         return "Admin{" +
                 "seq_id=" + seq_id +
-                ", admin_id='" + admin_id + '\'' +
+                ", adminId='" + adminId + '\'' +
                 ", fname='" + fname + '\'' +
                 ", lname='" + lname + '\'' +
                 ", name='" + name + '\'' +
-                ", registration_time='" + registration_time + '\'' +
+                ", registrationTime='" + registrationTime + '\'' +
                 '}';
     }
 }

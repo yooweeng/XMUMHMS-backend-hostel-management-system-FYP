@@ -2,6 +2,7 @@ package my.edu.xmu.hms.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,12 @@ public class AdminService {
     }
 
     public List<Admin> getAdmins(){
+        return adminRepository.findAll();
+    }
+
+    @Transactional
+    public List<Admin> deleteAdmin(String adminId){
+        adminRepository.deleteByAdminId(adminId);
         return adminRepository.findAll();
     }
 }

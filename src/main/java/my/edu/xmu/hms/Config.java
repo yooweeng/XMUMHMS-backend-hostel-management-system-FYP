@@ -2,6 +2,8 @@ package my.edu.xmu.hms;
 
 import my.edu.xmu.hms.admin.Admin;
 import my.edu.xmu.hms.admin.AdminRepository;
+import my.edu.xmu.hms.announcement.Announcement;
+import my.edu.xmu.hms.announcement.AnnouncementRepository;
 import my.edu.xmu.hms.hostel.Hostel;
 import my.edu.xmu.hms.hostel.HostelRepository;
 import my.edu.xmu.hms.student.Student;
@@ -12,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Configuration
@@ -22,6 +25,7 @@ public class Config {
             UserDetailRepository userDetailRepository,
             AdminRepository adminRepository,
             StudentRepository studentRepository,
+            AnnouncementRepository announcementRepository,
             HostelRepository hostelRepository
     ){
         return args -> {
@@ -44,8 +48,32 @@ public class Config {
                     "test1234"
             );
 
+            UserDetail userDetail3=new UserDetail(
+                    "753F673",
+                    "admin",
+                    "test1234"
+            );
+
+            UserDetail userDetail4=new UserDetail(
+                    "F75JF7Y",
+                    "admin",
+                    "test1234"
+            );
+
+            UserDetail userDetail5=new UserDetail(
+                    "A6JK1G7",
+                    "admin",
+                    "test1234"
+            );
+
+            UserDetail userDetail6=new UserDetail(
+                    "65UT852",
+                    "admin",
+                    "test1234"
+            );
+
             userDetailRepository.saveAll(
-                    List.of(userDetail, userDetail1, userDetail2)
+                    List.of(userDetail, userDetail1, userDetail2, userDetail3, userDetail4, userDetail5, userDetail6)
             );
 
             Admin admin=new Admin(
@@ -120,6 +148,26 @@ public class Config {
             studentRepository.saveAll(
                     List.of(student,student1)
             );
+
+            Announcement announcement = new Announcement(
+                    "2022-06-21T01:33:46.000Z",
+                    "Notice of Clean Maintenance",
+                    "Kindly be informed that the following blocks will under go clean maintenance in the upcoming weeks:-\n\n" +
+                            "Time: 11.00a.m to 5.00p.m\n" +
+                            "Location: Block D2, D3, D5\n" +
+                            "Reason: Clean maintenance"
+            );
+
+            Announcement announcement1 = new Announcement(
+                    "2021-09-22T03:22:24.681Z",
+                    "Notice of Water Disruption",
+                    "Kindly be informed that there will be water disruption on below stated date & time.\n\n" +
+                            "Date: 22nd September 2021 (Wednesday)\n" +
+                            "Time: 11.00a.m to 5.00p.m\n" +
+                            "Reason: Fix water tank pump for incoming water"
+            );
+
+            announcementRepository.saveAll(List.of(announcement, announcement1));
 
             Hostel hostel= new Hostel(
                     "D2",
