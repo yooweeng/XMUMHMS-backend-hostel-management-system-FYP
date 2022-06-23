@@ -150,21 +150,21 @@ public class Config {
             );
 
             Announcement announcement = new Announcement(
-                    "2022-06-21T01:33:46.000Z",
-                    "Notice of Clean Maintenance",
-                    "Kindly be informed that the following blocks will under go clean maintenance in the upcoming weeks:-\n\n" +
-                            "Time: 11.00a.m to 5.00p.m\n" +
-                            "Location: Block D2, D3, D5\n" +
-                            "Reason: Clean maintenance"
-            );
-
-            Announcement announcement1 = new Announcement(
                     "2021-09-22T03:22:24.681Z",
                     "Notice of Water Disruption",
                     "Kindly be informed that there will be water disruption on below stated date & time.\n\n" +
                             "Date: 22nd September 2021 (Wednesday)\n" +
                             "Time: 11.00a.m to 5.00p.m\n" +
                             "Reason: Fix water tank pump for incoming water"
+            );
+
+            Announcement announcement1 = new Announcement(
+                    "2022-06-21T01:33:46.000Z",
+                    "Notice of Clean Maintenance",
+                    "Kindly be informed that the following blocks will under go clean maintenance in the upcoming weeks:-\n\n" +
+                            "Time: 11.00a.m to 5.00p.m\n" +
+                            "Location: Block D2, D3, D5\n" +
+                            "Reason: Clean maintenance"
             );
 
             announcementRepository.saveAll(List.of(announcement, announcement1));
