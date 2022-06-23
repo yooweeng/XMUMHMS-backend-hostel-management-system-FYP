@@ -3,6 +3,7 @@ package my.edu.xmu.hms.announcement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -14,14 +15,27 @@ public class AnnouncementService {
         this.announcementRepository = announcementRepository;
     }
 
+    public List<Announcement> descendingListRecentToOld(List<Announcement> list){
+        Collections.reverse(list);
+        return list;
+    }
+
     public List<Announcement> getAnnouncements(){
-        return announcementRepository.findAll();
+        return descendingListRecentToOld(announcementRepository.findAll());
     }
 
     public List<Announcement> updateAnnouncement(Long seq_id, Announcement announcement){
-        Announcement announcementById = announcementRepository.findById(seq_id).get();
-        announcementById.setTitle(announcement.getTitle());
-        announcementRepository.save(announcement);
+        if(announcementRepository.findById(seq_id).isPresent()){
+            Announcement announcementById = announcementRepository.findById(seq_id).get();
+            announcementById.setTitle(announcement.getTitle());
+            announcementRepository.save(announcement);
+            return announcementRepository.findAll();
+        }
+        throw new IllegalStateException("Illegal or missing request parameter");
+    }
+
+    public List<Announcement> deleteAnnouncement(Long seq_id){
+        announcementRepository.deleteById(seq_id);
         return announcementRepository.findAll();
     }
 }

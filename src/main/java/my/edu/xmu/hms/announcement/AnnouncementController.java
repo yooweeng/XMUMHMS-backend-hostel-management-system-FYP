@@ -23,4 +23,9 @@ public class AnnouncementController {
     public List<Announcement> updateAnnouncement(@PathVariable Long seq_id, @RequestBody Announcement announcement){
         return announcementService.updateAnnouncement(seq_id, announcement);
     }
+
+    @DeleteMapping("{seq_id}")
+    public List<Announcement> deleteAnnouncement(@PathVariable Long seq_id){
+        return announcementService.deleteAnnouncement(seq_id);
+    }
 }
