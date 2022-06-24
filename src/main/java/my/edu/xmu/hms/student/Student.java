@@ -26,11 +26,15 @@ public class Student {
     private String nric_passport;
     private String programme;
     private String phone_no;
+    private String gender;
+    private String dob;
+    private String enrollmentDate;
+    private String address;
 
     public Student() {
     }
 
-    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no) {
+    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address) {
         this.student_id = student_id;
         this.email = email;
         this.fname = fname;
@@ -41,6 +45,10 @@ public class Student {
         this.nric_passport = nric_passport;
         this.programme = programme;
         this.phone_no = phone_no;
+        this.gender = gender;
+        this.dob = dob;
+        this.enrollmentDate = enrollmentDate;
+        this.address = address;
     }
 
     public Long getSeq_id() {
@@ -131,6 +139,38 @@ public class Student {
         this.phone_no = phone_no;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getEnrollmentDate() {
+        return enrollmentDate;
+    }
+
+    public void setEnrollmentDate(String enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -145,6 +185,10 @@ public class Student {
                 ", nric_passport='" + nric_passport + '\'' +
                 ", programme='" + programme + '\'' +
                 ", phone_no='" + phone_no + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dob='" + dob + '\'' +
+                ", enrollmentDate='" + enrollmentDate + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

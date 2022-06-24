@@ -4,6 +4,8 @@ import my.edu.xmu.hms.admin.Admin;
 import my.edu.xmu.hms.admin.AdminRepository;
 import my.edu.xmu.hms.announcement.Announcement;
 import my.edu.xmu.hms.announcement.AnnouncementRepository;
+import my.edu.xmu.hms.applicationRequest.ApplicationRequest;
+import my.edu.xmu.hms.applicationRequest.ApplicationRequestRepository;
 import my.edu.xmu.hms.hostel.Hostel;
 import my.edu.xmu.hms.hostel.HostelRepository;
 import my.edu.xmu.hms.student.Student;
@@ -26,7 +28,8 @@ public class Config {
             AdminRepository adminRepository,
             StudentRepository studentRepository,
             AnnouncementRepository announcementRepository,
-            HostelRepository hostelRepository
+            HostelRepository hostelRepository,
+            ApplicationRequestRepository applicationRequestRepository
     ){
         return args -> {
 
@@ -129,7 +132,11 @@ public class Config {
                     "Ng Yoo Wee",
                     "012345-01-12343",
                     "Bachelor in Software Engineering",
-                    "016-2351564"
+                    "016-2351564",
+                    "Male",
+                    "7/8/2000",
+                    "2019/04",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor"
             );
 
             Student student1=new Student(
@@ -142,7 +149,11 @@ public class Config {
                     "Tester 1",
                     "633225-01-12343",
                     "Bachelor in Electrical Engineering",
-                    "012-3456789"
+                    "012-3456789",
+                    "Female",
+                    "1/1/2000",
+                    "2018/09",
+                    "7 Jln Raya 81400 Senai Senai Johor 81400 Malaysia Senai Johor 81400 Malaysia"
             );
 
             studentRepository.saveAll(
@@ -194,6 +205,124 @@ public class Config {
             hostelRepository.saveAll(
                     List.of(hostel,hostel1)
             );
+
+            ApplicationRequest applicationRequest = new ApplicationRequest(
+                    "Application",
+                    true,
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "yoowee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Khoo",
+                    "Ng",
+                    "Parent",
+                    "Parent",
+                    "012-3456789",
+                    "016-3567889",
+                    true,
+                    "Zi",
+                    "016-3563357",
+                    "980314-01-4636",
+                    "na",
+                    "Pending"
+            );
+
+            ApplicationRequest applicationRequest1 = new ApplicationRequest(
+                    "Application",
+                    true,
+                    "swe1234567",
+                    "Tester 1",
+                    "tester1",
+                    "633225-01-12343",
+                    "Female",
+                    "1/1/2000",
+                    "Malaysian",
+                    "Bachelor in Electrical Engineering",
+                    "2018/09",
+                    "swe1234567@xmu.edu.my",
+                    "012-3456789",
+                    "7 Jln Raya 81400 Senai Senai Johor 81400 Malaysia Senai Johor 81400 Malaysia",
+                    "Hor",
+                    "Nge",
+                    "Parent",
+                    "Parent",
+                    "012-3456789",
+                    "016-3567889",
+                    true,
+                    "Haw",
+                    "016-3563357",
+                    "980314-01-4636",
+                    "na",
+                    "Approved"
+            );
+
+            ApplicationRequest applicationRequest2 = new ApplicationRequest(
+                    "Application",
+                    true,
+                    "swe1234567",
+                    "Tester 1",
+                    "tester1",
+                    "633225-01-12343",
+                    "Female",
+                    "1/1/2000",
+                    "Malaysian",
+                    "Bachelor in Electrical Engineering",
+                    "2018/09",
+                    "swe1234567@xmu.edu.my",
+                    "012-3456789",
+                    "7 Jln Raya 81400 Senai Senai Johor 81400 Malaysia Senai Johor 81400 Malaysia",
+                    "Hor",
+                    "Nge",
+                    "Parent",
+                    "Parent",
+                    "012-3456789",
+                    "016-3567889",
+                    false,
+                    "Haw",
+                    "016-3563357",
+                    "980314-01-4636",
+                    "na",
+                    "Rejected"
+            );
+
+            ApplicationRequest applicationRequest3 = new ApplicationRequest(
+                    "Application",
+                    true,
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "yoowee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Khoo",
+                    "Ng",
+                    "Parent",
+                    "Parent",
+                    "012-3456789",
+                    "016-3567889",
+                    true,
+                    "Zi",
+                    "016-3563357",
+                    "980314-01-4636",
+                    "na",
+                    "Pending"
+            );
+
+            applicationRequestRepository.saveAll(List.of(applicationRequest,applicationRequest1,applicationRequest2,applicationRequest3));
         };
     }
 }

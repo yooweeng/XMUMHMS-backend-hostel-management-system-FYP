@@ -24,11 +24,18 @@ public class AnnouncementService {
         return descendingListRecentToOld(announcementRepository.findAll());
     }
 
-    public List<Announcement> updateAnnouncement(Long seq_id, Announcement announcement){
+    public List<Announcement> saveAnnouncement(Announcement announcement){
+        announcementRepository.save(announcement);
+        return announcementRepository.findAll();
+    }
+
+    public List<Announcement> updateAnnouncement(Long seq_id, Announcement announcementDetails){
         if(announcementRepository.findById(seq_id).isPresent()){
             Announcement announcementById = announcementRepository.findById(seq_id).get();
-            announcementById.setTitle(announcement.getTitle());
-            announcementRepository.save(announcement);
+            announcementById.setTitle(announcementDetails.getTitle());
+            announcementById.setContent(announcementDetails.getContent());
+            announcementById.setDateTime(announcementDetails.getDateTime());
+            announcementRepository.save(announcementById);
             return announcementRepository.findAll();
         }
         throw new IllegalStateException("Illegal or missing request parameter");

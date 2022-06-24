@@ -19,9 +19,14 @@ public class AnnouncementController {
         return announcementService.getAnnouncements();
     }
 
+    @PostMapping
+    public List<Announcement> saveAnnouncement(@RequestBody Announcement announcement){
+        return announcementService.saveAnnouncement(announcement);
+    }
+
     @PutMapping("{seq_id}")
-    public List<Announcement> updateAnnouncement(@PathVariable Long seq_id, @RequestBody Announcement announcement){
-        return announcementService.updateAnnouncement(seq_id, announcement);
+    public List<Announcement> updateAnnouncement(@PathVariable Long seq_id, @RequestBody Announcement announcementDetails){
+        return announcementService.updateAnnouncement(seq_id, announcementDetails);
     }
 
     @DeleteMapping("{seq_id}")
