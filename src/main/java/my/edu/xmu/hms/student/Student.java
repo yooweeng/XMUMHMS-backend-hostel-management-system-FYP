@@ -30,11 +30,13 @@ public class Student {
     private String dob;
     private String enrollmentDate;
     private String address;
+    private String maritialStatus;
+    private String religion;
 
     public Student() {
     }
 
-    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address) {
+    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address, String maritialStatus, String religion) {
         this.student_id = student_id;
         this.email = email;
         this.fname = fname;
@@ -49,6 +51,8 @@ public class Student {
         this.dob = dob;
         this.enrollmentDate = enrollmentDate;
         this.address = address;
+        this.maritialStatus = maritialStatus;
+        this.religion = religion;
     }
 
     public Long getSeq_id() {
@@ -171,6 +175,22 @@ public class Student {
         this.address = address;
     }
 
+    public String getMaritialStatus() {
+        return maritialStatus;
+    }
+
+    public void setMaritialStatus(String maritialStatus) {
+        this.maritialStatus = maritialStatus;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -189,6 +209,8 @@ public class Student {
                 ", dob='" + dob + '\'' +
                 ", enrollmentDate='" + enrollmentDate + '\'' +
                 ", address='" + address + '\'' +
+                ", maritialStatus='" + maritialStatus + '\'' +
+                ", religion='" + religion + '\'' +
                 '}';
     }
 }

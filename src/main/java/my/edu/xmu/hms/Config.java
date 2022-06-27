@@ -136,7 +136,9 @@ public class Config {
                     "Male",
                     "7/8/2000",
                     "2019/04",
-                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor"
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Single",
+                    "Buddhist"
             );
 
             Student student1=new Student(
@@ -153,7 +155,9 @@ public class Config {
                     "Female",
                     "1/1/2000",
                     "2018/09",
-                    "7 Jln Raya 81400 Senai Senai Johor 81400 Malaysia Senai Johor 81400 Malaysia"
+                    "7 Jln Raya 81400 Senai Senai Johor 81400 Malaysia Senai Johor 81400 Malaysia",
+                    "Single",
+                    "Buddhist"
             );
 
             studentRepository.saveAll(
@@ -188,7 +192,10 @@ public class Config {
                     "swe1904867",
                     "Active",
                     "D",
-                    "Twin sharing room (Block D) with en-suite bathroom"
+                    "Twin sharing room (Block D) with en-suite bathroom",
+                    "2019-03-26",
+                    "9:28",
+                    "2023-03-20"
             );
 
             Hostel hostel1= new Hostel(
@@ -199,7 +206,10 @@ public class Config {
                     "swe1234567",
                     "Active",
                     "A",
-                    "Twin sharing room (Block LY) with en-suite bathroom"
+                    "Twin sharing room (Block LY) with en-suite bathroom",
+                    "2016-08-24",
+                    "10:56",
+                    "2020-08-22"
             );
 
             hostelRepository.saveAll(

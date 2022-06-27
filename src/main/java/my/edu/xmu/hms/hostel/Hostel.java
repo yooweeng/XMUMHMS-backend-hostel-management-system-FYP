@@ -24,11 +24,14 @@ public class Hostel {
     private String status;
     private String wing_no;
     private String room_type;
+    private String startDate;
+    private String startTime;
+    private String endDate;
 
     public Hostel() {
     }
 
-    public Hostel(String block, String floor, String room_no, String room_id, String user_id, String status, String wing_no, String room_type) {
+    public Hostel(String block, String floor, String room_no, String room_id, String user_id, String status, String wing_no, String room_type, String startDate, String startTime, String endDate) {
         this.block = block;
         this.floor = floor;
         this.room_no = room_no;
@@ -37,6 +40,9 @@ public class Hostel {
         this.status = status;
         this.wing_no = wing_no;
         this.room_type = room_type;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.endDate = endDate;
     }
 
     public Long getSeq_id() {
@@ -111,6 +117,30 @@ public class Hostel {
         this.room_type = room_type;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
     @Override
     public String toString() {
         return "Hostel{" +
@@ -123,6 +153,9 @@ public class Hostel {
                 ", status='" + status + '\'' +
                 ", wing_no='" + wing_no + '\'' +
                 ", room_type='" + room_type + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endDate='" + endDate + '\'' +
                 '}';
     }
 }

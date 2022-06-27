@@ -42,6 +42,9 @@ public class ApplicationRequest {
     private String roommateNricPassport;
     private String remarks;
     private String status;
+    private String startDate;
+    private String endDate;
+    private String modifyDate;
 
     public ApplicationRequest() {
     }
@@ -73,6 +76,27 @@ public class ApplicationRequest {
         this.roommateNricPassport = roommateNricPassport;
         this.remarks = remarks;
         this.status = status;
+    }
+
+    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String status, String startDate, String endDate, String modifyDate) {
+        this.applicationId = applicationId;
+        this.category = category;
+        this.isExistingStudent = isExistingStudent;
+        this.studentId = studentId;
+        this.fullname = fullname;
+        this.nricPassport = nricPassport;
+        this.gender = gender;
+        this.dob = dob;
+        this.nationality = nationality;
+        this.programme = programme;
+        this.enrollmentDate = enrollmentDate;
+        this.email = email;
+        this.phoneNo = phoneNo;
+        this.address = address;
+        this.status = status;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.modifyDate = modifyDate;
     }
 
     public Long getApplicationId() {
@@ -291,6 +315,30 @@ public class ApplicationRequest {
         this.status = status;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(String modifyDate) {
+        this.modifyDate = modifyDate;
+    }
+
     @Override
     public String toString() {
         return "ApplicationRequest{" +
@@ -321,6 +369,9 @@ public class ApplicationRequest {
                 ", roommateNricPassport='" + roommateNricPassport + '\'' +
                 ", remarks='" + remarks + '\'' +
                 ", status='" + status + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", modifyDate='" + modifyDate + '\'' +
                 '}';
     }
 }
