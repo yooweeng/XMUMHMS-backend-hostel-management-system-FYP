@@ -45,6 +45,9 @@ public class ApplicationRequest {
     private String startDate;
     private String endDate;
     private String modifyDate;
+    private String checkoutTime;
+    private String reason;
+    private String exchangedHostel;
 
     public ApplicationRequest() {
     }
@@ -97,6 +100,56 @@ public class ApplicationRequest {
         this.startDate = startDate;
         this.endDate = endDate;
         this.modifyDate = modifyDate;
+    }
+
+    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String parentName1, String relationship1, String parentMobile1, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason) {
+        this.applicationId = applicationId;
+        this.category = category;
+        this.isExistingStudent = isExistingStudent;
+        this.studentId = studentId;
+        this.fullname = fullname;
+        this.nricPassport = nricPassport;
+        this.gender = gender;
+        this.dob = dob;
+        this.nationality = nationality;
+        this.programme = programme;
+        this.enrollmentDate = enrollmentDate;
+        this.email = email;
+        this.phoneNo = phoneNo;
+        this.address = address;
+        this.parentName1 = parentName1;
+        this.relationship1 = relationship1;
+        this.parentMobile1 = parentMobile1;
+        this.status = status;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.modifyDate = modifyDate;
+        this.checkoutTime = checkoutTime;
+        this.reason = reason;
+    }
+
+    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason, String exchangedHostel) {
+        this.applicationId = applicationId;
+        this.category = category;
+        this.isExistingStudent = isExistingStudent;
+        this.studentId = studentId;
+        this.fullname = fullname;
+        this.nricPassport = nricPassport;
+        this.gender = gender;
+        this.dob = dob;
+        this.nationality = nationality;
+        this.programme = programme;
+        this.enrollmentDate = enrollmentDate;
+        this.email = email;
+        this.phoneNo = phoneNo;
+        this.address = address;
+        this.status = status;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.modifyDate = modifyDate;
+        this.checkoutTime = checkoutTime;
+        this.reason = reason;
+        this.exchangedHostel = exchangedHostel;
     }
 
     public Long getApplicationId() {
@@ -339,6 +392,30 @@ public class ApplicationRequest {
         this.modifyDate = modifyDate;
     }
 
+    public String getCheckoutTime() {
+        return checkoutTime;
+    }
+
+    public void setCheckoutTime(String checkoutTime) {
+        this.checkoutTime = checkoutTime;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getExchangedHostel() {
+        return exchangedHostel;
+    }
+
+    public void setExchangedHostel(String exchangedHostel) {
+        this.exchangedHostel = exchangedHostel;
+    }
+
     @Override
     public String toString() {
         return "ApplicationRequest{" +
@@ -372,6 +449,9 @@ public class ApplicationRequest {
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", modifyDate='" + modifyDate + '\'' +
+                ", checkoutTime='" + checkoutTime + '\'' +
+                ", reason='" + reason + '\'' +
+                ", exchangedHostel='" + exchangedHostel + '\'' +
                 '}';
     }
 }
