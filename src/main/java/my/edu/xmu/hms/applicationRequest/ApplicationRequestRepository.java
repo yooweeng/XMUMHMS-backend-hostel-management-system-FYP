@@ -10,4 +10,5 @@ public interface ApplicationRequestRepository
         extends JpaRepository<ApplicationRequest, Long> {
 
     List<ApplicationRequest> findByStatus(String status);
+    List<ApplicationRequest> findByStudentId(String studentId);
 }

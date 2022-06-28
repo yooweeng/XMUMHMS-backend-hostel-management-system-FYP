@@ -18,13 +18,13 @@ public class ApplicationRequestController {
     }
 
     @GetMapping
-    public List<ApplicationRequest> getApplicationRequests(@RequestParam(required = false) String status){
-        return applicationRequestService.getApplicationRequests(status);
+    public List<ApplicationRequest> getApplicationRequests(@RequestParam(required = false) String status,@RequestParam(required = false) String studentId){
+        return applicationRequestService.getApplicationRequests(status, studentId);
     }
 
     @PostMapping
-    public List<ApplicationRequest> saveApplicationRequest(@RequestBody ApplicationRequest applicationRequest){
-        return applicationRequestService.saveApplicationRequest(applicationRequest);
+    public List<ApplicationRequest> saveApplicationRequestIfNotExist(@RequestBody ApplicationRequest applicationRequest){
+        return applicationRequestService.saveApplicationRequestIfNotExist(applicationRequest);
     }
 
     @PutMapping("{id}")

@@ -25,10 +25,12 @@ public class ApplicationRequest {
     private String gender;
     private String dob;
     private String nationality;
+    private String maritialStatus;
     private String programme;
     private String enrollmentDate;
     private String email;
     private String phoneNo;
+    private String religion;
     private String address;
     private String parentName1;
     private String parentName2;
@@ -43,15 +45,18 @@ public class ApplicationRequest {
     private String remarks;
     private String status;
     private String startDate;
+    private String startTime;
     private String endDate;
     private String modifyDate;
     private String checkoutTime;
     private String reason;
     private String exchangedHostel;
+    private String roomId;
 
     public ApplicationRequest() {
     }
 
+    //application
     public ApplicationRequest(String category, Boolean isExistingStudent, String studentId, String fullname, String nickname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String parentName1, String parentName2, String relationship1, String relationship2, String parentMobile1, String parentMobile2, Boolean isSelectedBlockD, String roommateName, String roommatePhoneNo, String roommateNricPassport, String remarks, String status) {
         this.category = category;
         this.isExistingStudent = isExistingStudent;
@@ -81,8 +86,12 @@ public class ApplicationRequest {
         this.status = status;
     }
 
-    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String status, String startDate, String endDate, String modifyDate) {
-        this.applicationId = applicationId;
+    //change period
+    public ApplicationRequest(String category, String studentId, String fullname, String nricPassport,
+                              String gender, String dob, String nationality, String programme, String enrollmentDate,
+                              String email, String phoneNo, String address, String status, String startDate, String endDate,
+                              String modifyDate, Boolean isSelectedBlockD, String remarks, String religion,
+                              Boolean isExistingStudent,String maritialStatus) {
         this.category = category;
         this.isExistingStudent = isExistingStudent;
         this.studentId = studentId;
@@ -100,10 +109,14 @@ public class ApplicationRequest {
         this.startDate = startDate;
         this.endDate = endDate;
         this.modifyDate = modifyDate;
+        this.isSelectedBlockD = isSelectedBlockD;
+        this.remarks = remarks;
+        this.maritialStatus = maritialStatus;
+        this.religion = religion;
     }
 
-    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String parentName1, String relationship1, String parentMobile1, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason) {
-        this.applicationId = applicationId;
+    //checkout
+    public ApplicationRequest(String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String parentName1, String relationship1, String parentMobile1, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason, Boolean isSelectedBlockD, String remarks, String maritialStatus, String roomId) {
         this.category = category;
         this.isExistingStudent = isExistingStudent;
         this.studentId = studentId;
@@ -126,10 +139,14 @@ public class ApplicationRequest {
         this.modifyDate = modifyDate;
         this.checkoutTime = checkoutTime;
         this.reason = reason;
+        this.isSelectedBlockD = isSelectedBlockD;
+        this.remarks = remarks;
+        this.maritialStatus = maritialStatus;
+        this.roomId = roomId;
     }
 
-    public ApplicationRequest(Long applicationId, String category, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason, String exchangedHostel) {
-        this.applicationId = applicationId;
+    //change room
+    public ApplicationRequest(String category, String roomId, String startTime, Boolean isExistingStudent, String studentId, String fullname, String nricPassport, String gender, String dob, String nationality, String programme, String enrollmentDate, String email, String phoneNo, String address, String status, String startDate, String endDate, String modifyDate, String checkoutTime, String reason, String exchangedHostel, Boolean isSelectedBlockD, String remarks, String maritialStatus, String religion) {
         this.category = category;
         this.isExistingStudent = isExistingStudent;
         this.studentId = studentId;
@@ -150,6 +167,12 @@ public class ApplicationRequest {
         this.checkoutTime = checkoutTime;
         this.reason = reason;
         this.exchangedHostel = exchangedHostel;
+        this.isSelectedBlockD = isSelectedBlockD;
+        this.remarks = remarks;
+        this.maritialStatus = maritialStatus;
+        this.religion = religion;
+        this.roomId = roomId;
+        this.startTime = startTime;
     }
 
     public Long getApplicationId() {
@@ -416,6 +439,38 @@ public class ApplicationRequest {
         this.exchangedHostel = exchangedHostel;
     }
 
+    public String getMaritialStatus() {
+        return maritialStatus;
+    }
+
+    public void setMaritialStatus(String maritialStatus) {
+        this.maritialStatus = maritialStatus;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
     @Override
     public String toString() {
         return "ApplicationRequest{" +
@@ -429,10 +484,12 @@ public class ApplicationRequest {
                 ", gender='" + gender + '\'' +
                 ", dob='" + dob + '\'' +
                 ", nationality='" + nationality + '\'' +
+                ", maritialStatus='" + maritialStatus + '\'' +
                 ", programme='" + programme + '\'' +
                 ", enrollmentDate='" + enrollmentDate + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
+                ", religion='" + religion + '\'' +
                 ", address='" + address + '\'' +
                 ", parentName1='" + parentName1 + '\'' +
                 ", parentName2='" + parentName2 + '\'' +
@@ -447,11 +504,13 @@ public class ApplicationRequest {
                 ", remarks='" + remarks + '\'' +
                 ", status='" + status + '\'' +
                 ", startDate='" + startDate + '\'' +
+                ", startTime='" + startTime + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", modifyDate='" + modifyDate + '\'' +
                 ", checkoutTime='" + checkoutTime + '\'' +
                 ", reason='" + reason + '\'' +
                 ", exchangedHostel='" + exchangedHostel + '\'' +
+                ", roomId='" + roomId + '\'' +
                 '}';
     }
 }

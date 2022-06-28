@@ -219,7 +219,7 @@ public class Config {
             ApplicationRequest applicationRequest = new ApplicationRequest(
                     "Application",
                     true,
-                    "swe1904867",
+                    "swe5478674",
                     "Ng Yoo Wee",
                     "yoowee",
                     "012345-01-12343",
@@ -248,7 +248,7 @@ public class Config {
             ApplicationRequest applicationRequest1 = new ApplicationRequest(
                     "Application",
                     true,
-                    "swe1234567",
+                    "swe6543210",
                     "Tester 1",
                     "tester1",
                     "633225-01-12343",
@@ -304,11 +304,10 @@ public class Config {
             );
 
             ApplicationRequest applicationRequest3 = new ApplicationRequest(
-                    "Application",
+                    "Checkout",
                     true,
                     "swe1904867",
                     "Ng Yoo Wee",
-                    "yoowee",
                     "012345-01-12343",
                     "Male",
                     "7/8/2000",
@@ -319,20 +318,76 @@ public class Config {
                     "016-2351564",
                     "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
                     "Khoo",
-                    "Ng",
                     "Parent",
-                    "Parent",
-                    "012-3456789",
-                    "016-3567889",
+                    "012-3452445",
+                    "Pending",
+                    "2019-03-26",
+                    "2023-03-20",
+                    "2022-07-20",
+                    "9:30",
+                    "End of degree studies",
                     true,
-                    "Zi",
-                    "016-3563357",
-                    "980314-01-4636",
                     "na",
-                    "Pending"
+                    "Single",
+                    "D2-D505"
             );
 
-            applicationRequestRepository.saveAll(List.of(applicationRequest,applicationRequest1,applicationRequest2,applicationRequest3));
+            ApplicationRequest applicationRequest4 = new ApplicationRequest(
+                    "Exchange Room",
+                    "D2-D505",
+                    "9:30",
+                    true,
+                    "swe3456789",
+                    "Ng Yoo Wee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Pending",
+                    "2019-03-26",
+                    "2023-03-20",
+                    "2022-07-20",
+                    "9:30",
+                    "End of degree studies",
+                    "D3-D502",
+                    true,
+                    "na",
+                    "Single",
+                    "Buddhist"
+            );
+
+            ApplicationRequest applicationRequest5 = new ApplicationRequest(
+                    "Change Period",
+                    "swe2345678",
+                    "Ng Yoo Wee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Pending",
+                    "2019-03-26",
+                    "2023-03-20",
+                    "2022-07-20",
+                    true,
+                    "na",
+                    "Buddhist",
+                    true,
+                    "Single"
+            );
+
+            applicationRequestRepository.saveAll(List.of(applicationRequest,
+                    applicationRequest1,applicationRequest2,applicationRequest3,
+                    applicationRequest4, applicationRequest5));
         };
     }
 }

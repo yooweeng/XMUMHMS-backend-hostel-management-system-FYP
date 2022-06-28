@@ -14,17 +14,20 @@ public class ApplicationRequestService {
         this.applicationRequestRepository = applicationRequestRepository;
     }
 
-    public List<ApplicationRequest> getApplicationRequests(String status){
-        if(status == null){
+    public List<ApplicationRequest> getApplicationRequests(String status, String studentId){
+        if((status == null) && (studentId == null)){
             return applicationRequestRepository.findAll();
         }
-        if(status.equals("pending")){
+        if((status != null) && (status.equals("pending"))){
             return applicationRequestRepository.findByStatus("Pending");
+        }
+        if(studentId != null){
+            return applicationRequestRepository.findByStudentId(studentId);
         }
         throw new IllegalStateException("Illegal or missing request parameter");
     }
 
-    public List<ApplicationRequest> saveApplicationRequest(ApplicationRequest applicationRequest){
+    public List<ApplicationRequest> saveApplicationRequestIfNotExist(ApplicationRequest applicationRequest){
         applicationRequestRepository.save(applicationRequest);
         return applicationRequestRepository.findAll();
     }
