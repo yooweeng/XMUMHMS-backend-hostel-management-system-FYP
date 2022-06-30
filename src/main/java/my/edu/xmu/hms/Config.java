@@ -48,31 +48,31 @@ public class Config {
             UserDetail userDetail2=new UserDetail(
                     "admin",
                     "admin",
-                    "test1234"
+                    "admin1234"
             );
 
             UserDetail userDetail3=new UserDetail(
                     "753F673",
                     "admin",
-                    "test1234"
+                    "admin1234"
             );
 
             UserDetail userDetail4=new UserDetail(
                     "F75JF7Y",
                     "admin",
-                    "test1234"
+                    "admin1234"
             );
 
             UserDetail userDetail5=new UserDetail(
                     "A6JK1G7",
                     "admin",
-                    "test1234"
+                    "admin1234"
             );
 
             UserDetail userDetail6=new UserDetail(
                     "65UT852",
                     "admin",
-                    "test1234"
+                    "admin1234"
             );
 
             userDetailRepository.saveAll(
@@ -385,9 +385,68 @@ public class Config {
                     "Single"
             );
 
+            ApplicationRequest applicationRequest6 = new ApplicationRequest(
+                    "Checkout",
+                    true,
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Khoo",
+                    "Parent",
+                    "012-3452445",
+                    "Rejected",
+                    "2019-03-26",
+                    "2023-03-20",
+                    "2022-07-20",
+                    "9:30",
+                    "End of degree studies",
+                    true,
+                    "na",
+                    "Single",
+                    "D2-D505"
+            );
+
+            ApplicationRequest applicationRequest7 = new ApplicationRequest(
+                    "Application",
+                    true,
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "yoowee",
+                    "012345-01-12343",
+                    "Male",
+                    "7/8/2000",
+                    "Malaysian",
+                    "Bachelor in Software Engineering",
+                    "2019/04",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "18, Jalan Aman Perdana 6H/KU5, Taman Aman Perdana, 41050, Klang, Selangor",
+                    "Khoo",
+                    "Ng",
+                    "Parent",
+                    "Parent",
+                    "012-3456789",
+                    "016-3567889",
+                    false,
+                    "Zi",
+                    "016-3563357",
+                    "980314-01-4636",
+                    "na",
+                    "Approved"
+            );
+
             applicationRequestRepository.saveAll(List.of(applicationRequest,
                     applicationRequest1,applicationRequest2,applicationRequest3,
-                    applicationRequest4, applicationRequest5));
+                    applicationRequest4, applicationRequest5, applicationRequest6,
+                    applicationRequest7));
         };
     }
 }
