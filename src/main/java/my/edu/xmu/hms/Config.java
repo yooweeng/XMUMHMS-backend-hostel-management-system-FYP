@@ -1,5 +1,7 @@
 package my.edu.xmu.hms;
 
+import my.edu.xmu.hms.Feedback.Feedback;
+import my.edu.xmu.hms.Feedback.FeedbackRepository;
 import my.edu.xmu.hms.admin.Admin;
 import my.edu.xmu.hms.admin.AdminRepository;
 import my.edu.xmu.hms.announcement.Announcement;
@@ -29,7 +31,8 @@ public class Config {
             StudentRepository studentRepository,
             AnnouncementRepository announcementRepository,
             HostelRepository hostelRepository,
-            ApplicationRequestRepository applicationRequestRepository
+            ApplicationRequestRepository applicationRequestRepository,
+            FeedbackRepository feedbackRepository
     ){
         return args -> {
 
@@ -447,6 +450,12 @@ public class Config {
                     applicationRequest1,applicationRequest2,applicationRequest3,
                     applicationRequest4, applicationRequest5, applicationRequest6,
                     applicationRequest7));
+
+            Feedback feedback = new Feedback("Slow work process",
+                    "I have send a requet for two months but still does not get reply regarding the application.",
+                    "");
+
+            feedbackRepository.saveAll(List.of(feedback));
         };
     }
 }
