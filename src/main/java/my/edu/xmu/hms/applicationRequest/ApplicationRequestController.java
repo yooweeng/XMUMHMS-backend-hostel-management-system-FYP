@@ -1,5 +1,6 @@
 package my.edu.xmu.hms.applicationRequest;
 
+import my.edu.xmu.hms.user.UserDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,5 +31,10 @@ public class ApplicationRequestController {
     @PutMapping("{id}")
     public List<ApplicationRequest> updateApplicationRequest(@PathVariable Long id, @RequestBody ApplicationRequest applicationRequestDetails){
         return applicationRequestService.updateApplicationRequest(id, applicationRequestDetails);
+    }
+
+    @DeleteMapping("{applicationId}")
+    public List<ApplicationRequest> deleteApplicationRequest(@PathVariable Long applicationId){
+        return applicationRequestService.deleteApplicationRequest(applicationId);
     }
 }

@@ -16,15 +16,15 @@ public class UserDetail {
             generator = "user_details_sequence"
     )
     private Long seq_id;
-    private String user_id;
+    private String userId;
     private String category;
     private String pw;
 
     public UserDetail() {
     }
 
-    public UserDetail(String user_id, String category, String pw) {
-        this.user_id = user_id;
+    public UserDetail(String userId, String category, String pw) {
+        this.userId = userId;
         this.category = category;
         this.pw = pw;
     }
@@ -37,12 +37,12 @@ public class UserDetail {
         this.seq_id = seq_id;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getPw() {
@@ -65,7 +65,7 @@ public class UserDetail {
     public String toString() {
         return "UserDetail{" +
                 "seq_id=" + seq_id +
-                ", user_id='" + user_id + '\'' +
+                ", userId='" + userId + '\'' +
                 ", category='" + category + '\'' +
                 ", pw='" + pw + '\'' +
                 '}';

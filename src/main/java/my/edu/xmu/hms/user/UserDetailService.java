@@ -1,7 +1,9 @@
 package my.edu.xmu.hms.user;
 
+import my.edu.xmu.hms.admin.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,5 +28,16 @@ public class UserDetailService {
             return userDetailRepository.findByCategory("admin");
         }
         throw new IllegalStateException("Illegal or missing request parameter");
+    }
+
+    public List<UserDetail> saveUserDetail(UserDetail userDetail){
+        userDetailRepository.save(userDetail);
+        return userDetailRepository.findAll();
+    }
+
+    @Transactional
+    public List<UserDetail> deleteUserDetail(String adminId){
+        userDetailRepository.deleteByUserId(adminId);
+        return userDetailRepository.findAll();
     }
 }

@@ -1,7 +1,7 @@
 package my.edu.xmu.hms;
 
-import my.edu.xmu.hms.Feedback.Feedback;
-import my.edu.xmu.hms.Feedback.FeedbackRepository;
+import my.edu.xmu.hms.feedback.Feedback;
+import my.edu.xmu.hms.feedback.FeedbackRepository;
 import my.edu.xmu.hms.admin.Admin;
 import my.edu.xmu.hms.admin.AdminRepository;
 import my.edu.xmu.hms.announcement.Announcement;
@@ -10,6 +10,8 @@ import my.edu.xmu.hms.applicationRequest.ApplicationRequest;
 import my.edu.xmu.hms.applicationRequest.ApplicationRequestRepository;
 import my.edu.xmu.hms.hostel.Hostel;
 import my.edu.xmu.hms.hostel.HostelRepository;
+import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequest;
+import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequestRepository;
 import my.edu.xmu.hms.student.Student;
 import my.edu.xmu.hms.student.StudentRepository;
 import my.edu.xmu.hms.user.UserDetail;
@@ -18,7 +20,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Configuration
@@ -32,6 +33,7 @@ public class Config {
             AnnouncementRepository announcementRepository,
             HostelRepository hostelRepository,
             ApplicationRequestRepository applicationRequestRepository,
+            MaintenanceRequestRepository maintenanceRequestRepository,
             FeedbackRepository feedbackRepository
     ){
         return args -> {
@@ -96,7 +98,7 @@ public class Config {
                     "Admin",
                     "Wong",
                     "Admin Wong",
-                    "2019-06-24 10:35:55"
+                    "2019-6-24 10:35:55"
             );
 
             Admin admin2=new Admin(
@@ -104,7 +106,7 @@ public class Config {
                     "Admin",
                     "Loh",
                     "Admin Loh",
-                    "2018-09-14 12:21:46"
+                    "2018-9-14 12:21:46"
             );
 
             Admin admin3=new Admin(
@@ -112,7 +114,7 @@ public class Config {
                     "Admin",
                     "Hong",
                     "Admin Hong",
-                    "2018-01-24 09:19:23"
+                    "2018-1-24 9:19:23"
             );
 
             Admin admin4=new Admin(
@@ -120,7 +122,7 @@ public class Config {
                     "Admin",
                     "Siti",
                     "Admin Siti",
-                    "2017-07-13 09:06:31"
+                    "2017-7-13 9:6:31"
             );
 
             adminRepository.saveAll(List.of(admin,admin1,admin2,admin3,admin4));
@@ -451,8 +453,55 @@ public class Config {
                     applicationRequest4, applicationRequest5, applicationRequest6,
                     applicationRequest7));
 
+            MaintenanceRequest maintenanceRequest = new MaintenanceRequest(
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "Air Conditioner",
+                    "no",
+                    "D2-D505",
+                    "Water dripping from air conditioner",
+                    "",
+                    "Solved",
+                    "DONE- repair drain pipe leaking",
+                    "11-9-2019"
+            );
+
+            MaintenanceRequest maintenanceRequest1 = new MaintenanceRequest(
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "Fitting and Plumbing",
+                    "no",
+                    "D2-D505",
+                    "Basin stuck and overflow",
+                    "",
+                    "Solved",
+                    "Work done on 28 May 2020",
+                    "24-5-2020"
+            );
+
+            MaintenanceRequest maintenanceRequest2 = new MaintenanceRequest(
+                    "swe1904867",
+                    "Ng Yoo Wee",
+                    "swe1904867@xmu.edu.my",
+                    "016-2351564",
+                    "Fitting and Plumbing",
+                    "no",
+                    "D2-D505",
+                    "Sink blockage and faucet leakage",
+                    "",
+                    "Solved",
+                    "Job complete on 9 August 2020",
+                    "7-7-2020"
+            );
+
+            maintenanceRequestRepository.saveAll(List.of(maintenanceRequest, maintenanceRequest1, maintenanceRequest2));
+
             Feedback feedback = new Feedback("Slow work process",
-                    "I have send a requet for two months but still does not get reply regarding the application.",
+                    "I have send a request for two months but still does not get reply regarding the application.",
                     "");
 
             feedbackRepository.saveAll(List.of(feedback));

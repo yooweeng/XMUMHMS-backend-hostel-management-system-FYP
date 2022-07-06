@@ -11,4 +11,5 @@ public interface ApplicationRequestRepository
 
     List<ApplicationRequest> findByStatus(String status);
     List<ApplicationRequest> findByStudentId(String studentId);
+    void deleteByApplicationId(Long applicationId);
 }

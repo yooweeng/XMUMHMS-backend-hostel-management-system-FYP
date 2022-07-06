@@ -1,4 +1,4 @@
-package my.edu.xmu.hms.Feedback;
+package my.edu.xmu.hms.feedback;
 
 import org.springframework.stereotype.Service;
 

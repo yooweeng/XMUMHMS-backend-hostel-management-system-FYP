@@ -10,4 +10,5 @@ public interface UserDetailRepository
         extends JpaRepository<UserDetail, Long> {
 
     List<UserDetail> findByCategory(String category);
+    void deleteByUserId(String adminId);
 }
