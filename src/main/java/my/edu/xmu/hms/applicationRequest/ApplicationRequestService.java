@@ -43,7 +43,7 @@ public class ApplicationRequestService {
                 applicationRequestById.setStatus(applicationRequestDetails.getStatus());
             }
 
-            //update checkout
+            //hostel application
             if(applicationRequestDetails.getParentName1() != null){
                 applicationRequestById.setParentName1(applicationRequestDetails.getParentName1());
             }
@@ -53,14 +53,50 @@ public class ApplicationRequestService {
             if(applicationRequestDetails.getRelationship1() != null){
                 applicationRequestById.setRelationship1(applicationRequestDetails.getRelationship1());
             }
-            if(applicationRequestDetails.getReason() != null){
-                applicationRequestById.setReason(applicationRequestDetails.getReason());
+            if(applicationRequestDetails.getNickname() != null){
+                applicationRequestById.setNickname(applicationRequestDetails.getNickname());
             }
+            if(applicationRequestDetails.getRoommateName() != null){
+                applicationRequestById.setRoommateName(applicationRequestDetails.getRoommateName());
+            }
+            if(applicationRequestDetails.getRoommateNricPassport() != null){
+                applicationRequestById.setRoommateNricPassport(applicationRequestDetails.getRoommateNricPassport());
+            }
+            if(applicationRequestDetails.getRoommatePhoneNo() != null){
+                applicationRequestById.setRoommatePhoneNo(applicationRequestDetails.getRoommatePhoneNo());
+            }
+            if(applicationRequestDetails.getParentName2() != null){
+                applicationRequestById.setParentName2(applicationRequestDetails.getParentName2());
+            }
+            if(applicationRequestDetails.getParentMobile2() != null){
+                applicationRequestById.setParentMobile2(applicationRequestDetails.getParentMobile2());
+            }
+            if(applicationRequestDetails.getRelationship2() != null){
+                applicationRequestById.setRelationship2(applicationRequestDetails.getRelationship2());
+            }
+            if(applicationRequestDetails.getRemarks() != null){
+                applicationRequestById.setRemarks(applicationRequestDetails.getRemarks());
+            }
+            if(applicationRequestDetails.getSelectedBlockD() != null){
+                applicationRequestById.setSelectedBlockD(applicationRequestDetails.getSelectedBlockD());
+            }
+
+            //change period
             if(applicationRequestDetails.getModifyDate() != null){
                 applicationRequestById.setModifyDate(applicationRequestDetails.getModifyDate());
             }
+
+            //update checkout
+            if(applicationRequestDetails.getReason() != null){
+                applicationRequestById.setReason(applicationRequestDetails.getReason());
+            }
             if(applicationRequestDetails.getCheckoutTime() != null){
                 applicationRequestById.setCheckoutTime(applicationRequestDetails.getCheckoutTime());
+            }
+
+            //change room
+            if(applicationRequestDetails.getExchangedHostel() != null){
+                applicationRequestById.setExchangedHostel(applicationRequestDetails.getExchangedHostel());
             }
 
             applicationRequestRepository.save(applicationRequestById);

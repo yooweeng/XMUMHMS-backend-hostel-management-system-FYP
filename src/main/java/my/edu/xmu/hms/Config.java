@@ -1,5 +1,7 @@
 package my.edu.xmu.hms;
 
+import my.edu.xmu.hms.faq.Faq;
+import my.edu.xmu.hms.faq.FaqRepository;
 import my.edu.xmu.hms.feedback.Feedback;
 import my.edu.xmu.hms.feedback.FeedbackRepository;
 import my.edu.xmu.hms.admin.Admin;
@@ -10,6 +12,8 @@ import my.edu.xmu.hms.applicationRequest.ApplicationRequest;
 import my.edu.xmu.hms.applicationRequest.ApplicationRequestRepository;
 import my.edu.xmu.hms.hostel.Hostel;
 import my.edu.xmu.hms.hostel.HostelRepository;
+import my.edu.xmu.hms.hostelrate.HostelRate;
+import my.edu.xmu.hms.hostelrate.HostelRateRepository;
 import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequest;
 import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequestRepository;
 import my.edu.xmu.hms.student.Student;
@@ -30,11 +34,13 @@ public class Config {
             UserDetailRepository userDetailRepository,
             AdminRepository adminRepository,
             StudentRepository studentRepository,
+            HostelRateRepository hostelRateRepository,
             AnnouncementRepository announcementRepository,
             HostelRepository hostelRepository,
             ApplicationRequestRepository applicationRequestRepository,
             MaintenanceRequestRepository maintenanceRequestRepository,
-            FeedbackRepository feedbackRepository
+            FeedbackRepository feedbackRepository,
+            FaqRepository faqRepository
     ){
         return args -> {
 
@@ -168,6 +174,10 @@ public class Config {
             studentRepository.saveAll(
                     List.of(student,student1)
             );
+
+            HostelRate hostelRate = new HostelRate(340,390);
+
+            hostelRateRepository.save(hostelRate);
 
             Announcement announcement = new Announcement(
                     "2021-09-22T03:22:24.681Z",
@@ -505,6 +515,53 @@ public class Config {
                     "");
 
             feedbackRepository.saveAll(List.of(feedback));
+
+            Faq faq = new Faq(
+                    "Is on-campus accommodation provided?",
+                    "XMUM provides on-campus accommodation to all registered students. Students are encouraged to live in campus residences, as living on campus facilitates participation in extra-curricular activities."
+            );
+
+            Faq faq1 = new Faq(
+                    "How much is the rental?",
+                    "The rental ranges from RM 340 to RM 390 per month. Each of the registered student who lives in the campus residences is required to pay a deposit of RM500 (refundable) together with one-semester rental upon check-in."
+            );
+
+            Faq faq2 = new Faq(
+                    "What security precautions does the University take on campus?",
+                    "The hostel is guarded by security guards and is under 24 hour CCTV surveillance. Students need to get through by their Student ID card. Unauthorized guests are barred from entering in the compound of student hostels."
+            );
+
+            Faq faq3 = new Faq(
+                    "Do students need to observe any curfew regulation?",
+                    "The curfew set for the residences is 12:00 am. Residents who wish to leave or return to the campus ground after 12:00 am must report at the guardhouse with their student IDs."
+            );
+
+            Faq faq4 = new Faq(
+                    "Are there any laundry facilities available?",
+                    "Yes, there is a laundry room on the ground floor of each block, providing high-efficiency and fully automatic washing machines and dryers. The machines are coin-operated (RM 4 per barrel)."
+            );
+
+            Faq faq5 = new Faq(
+                    "Are students allowed to stay in the hostel during semester breaks?",
+                    "Yes, students can stay on campus during semester breaks."
+            );
+
+            Faq faq6 = new Faq(
+                    "Do students need to bring their own cleaning supplies to clean their rooms?",
+                    "Yes, students need to bring cleaning supplies, as they are responsible for the tidiness and cleanliness of their own bedrooms."
+            );
+
+            Faq faq7 = new Faq(
+                    "Is mattress provided in the room?",
+                    "Yes, we provide quality mattress. However, students need to bring their own pillows and other necessary bedding items."
+            );
+
+            Faq faq8 = new Faq(
+                    "Is electric fan allowed to be used in the hostel room?",
+                    "There is an air-conditioner in each room. If it is necessary, students may bring their own electric fan."
+            );
+
+            faqRepository.saveAll(List.of(faq,faq1,faq2,faq3,faq4,faq5,faq6,faq7,faq8));
         };
     }
 }
