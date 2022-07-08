@@ -1,5 +1,6 @@
 package my.edu.xmu.hms.student;
 
+import my.edu.xmu.hms.model.StudentDetail;
 import my.edu.xmu.hms.token.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public List<Student> saveStudent(@RequestBody Student student){
-        studentService.saveStudent(student);
-        return studentService.getStudents();
+    public StudentDetail saveStudent(@RequestBody StudentDetail studentDetails){
+        return studentService.saveStudent(studentDetails);
     }
 }

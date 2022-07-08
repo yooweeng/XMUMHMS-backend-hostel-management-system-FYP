@@ -31,6 +31,9 @@ public class UserDetailService {
     }
 
     public List<UserDetail> saveUserDetail(UserDetail userDetail){
+        if(userDetailRepository.findByUserId(userDetail.getUserId()).isPresent()){
+            throw new IllegalStateException("student id existed");
+        }
         userDetailRepository.save(userDetail);
         return userDetailRepository.findAll();
     }

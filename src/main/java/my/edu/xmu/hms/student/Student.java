@@ -36,6 +36,13 @@ public class Student {
     public Student() {
     }
 
+    public Student(String student_id, String email, String fname, String lname) {
+        this.student_id = student_id;
+        this.email = email;
+        this.fname = fname;
+        this.lname = lname;
+    }
+
     public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address, String maritialStatus, String religion) {
         this.student_id = student_id;
         this.email = email;
