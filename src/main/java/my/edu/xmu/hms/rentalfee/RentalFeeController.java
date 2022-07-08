@@ -1,9 +1,6 @@
 package my.edu.xmu.hms.rentalfee;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +16,7 @@ public class RentalFeeController {
     }
 
     @GetMapping
-    public List<RentalFee> getRentalFees(){
-        return rentalFeeService.getRentalFees();
+    public List<RentalFee> getRentalFeesByUserId(@RequestParam(required = false) String userId){
+        return rentalFeeService.getRentalFees(userId);
     }
 }

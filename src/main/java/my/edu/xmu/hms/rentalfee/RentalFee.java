@@ -16,6 +16,7 @@ public class RentalFee {
             generator = "rental_fee_sequence"
     )
     Long seq_id;
+    String userId;
     String date;
     String record;
     float amount;
@@ -26,7 +27,8 @@ public class RentalFee {
     public RentalFee() {
     }
 
-    public RentalFee(String date, String record, float amount, float paid) {
+    public RentalFee(String userId, String date, String record, float amount, float paid) {
+        this.userId = userId;
         this.date = date;
         this.record = record;
         this.amount = amount;
@@ -81,10 +83,19 @@ public class RentalFee {
         this.balanceRemaining = balanceRemaining;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "RentalFee{" +
                 "seq_id=" + seq_id +
+                ", userId='" + userId + '\'' +
                 ", date='" + date + '\'' +
                 ", record='" + record + '\'' +
                 ", amount=" + amount +

@@ -12,7 +12,10 @@ public class RentalFeeService {
         this.rentalFeeRepository = rentalFeeRepository;
     }
 
-    public List<RentalFee> getRentalFees(){
-        return rentalFeeRepository.findAll();
+    public List<RentalFee> getRentalFees(String userId){
+        if(userId == null){
+            return rentalFeeRepository.findAll();
+        }
+        return rentalFeeRepository.findByUserId(userId);
     }
 }
