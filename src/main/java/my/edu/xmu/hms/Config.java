@@ -16,6 +16,8 @@ import my.edu.xmu.hms.hostelrate.HostelRate;
 import my.edu.xmu.hms.hostelrate.HostelRateRepository;
 import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequest;
 import my.edu.xmu.hms.maintenanceRequest.MaintenanceRequestRepository;
+import my.edu.xmu.hms.rentalfee.RentalFee;
+import my.edu.xmu.hms.rentalfee.RentalFeeRepository;
 import my.edu.xmu.hms.student.Student;
 import my.edu.xmu.hms.student.StudentRepository;
 import my.edu.xmu.hms.user.UserDetail;
@@ -35,6 +37,7 @@ public class Config {
             AdminRepository adminRepository,
             StudentRepository studentRepository,
             HostelRateRepository hostelRateRepository,
+            RentalFeeRepository rentalFeeRepository,
             AnnouncementRepository announcementRepository,
             HostelRepository hostelRepository,
             ApplicationRequestRepository applicationRequestRepository,
@@ -178,6 +181,16 @@ public class Config {
             HostelRate hostelRate = new HostelRate(340,390);
 
             hostelRateRepository.save(hostelRate);
+
+            RentalFee rentalFee = new RentalFee("14-4-2018","Deposit",500,500);
+            RentalFee rentalFee1 = new RentalFee("1-8-2018","Rental- Semester 2",1360,1360);
+            RentalFee rentalFee2 = new RentalFee("3-12-2018","Rental- Semester 3",1360,1360);
+            RentalFee rentalFee3 = new RentalFee("3-12-2018","Rental- Semester 3",1360,1360);
+            RentalFee rentalFee4 = new RentalFee("11-4-2019","Rental- Semester 1",1700,1700);
+            RentalFee rentalFee5 = new RentalFee("16-9-2019","Rental- Semester 2",1700,1700);
+            RentalFee rentalFee6 = new RentalFee("10-2-2020","Rental- Semester 3",680,680);
+
+            rentalFeeRepository.saveAll(List.of(rentalFee,rentalFee1,rentalFee2,rentalFee3,rentalFee4,rentalFee5,rentalFee6));
 
             Announcement announcement = new Announcement(
                     "2021-09-22T03:22:24.681Z",
