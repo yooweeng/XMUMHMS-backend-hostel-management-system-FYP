@@ -22,7 +22,6 @@ public class Student {
     private String lname;
     private String status;
     private String nationality;
-    private String fullname;
     private String nric_passport;
     private String programme;
     private String phone_no;
@@ -32,6 +31,9 @@ public class Student {
     private String address;
     private String maritialStatus;
     private String religion;
+
+    @Transient
+    private String fullname;
 
     public Student() {
     }
@@ -43,14 +45,13 @@ public class Student {
         this.lname = lname;
     }
 
-    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String fullname, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address, String maritialStatus, String religion) {
+    public Student(String student_id, String email, String fname, String lname, String status, String nationality, String nric_passport, String programme, String phone_no, String gender, String dob, String enrollmentDate, String address, String maritialStatus, String religion) {
         this.student_id = student_id;
         this.email = email;
         this.fname = fname;
         this.lname = lname;
         this.status = status;
         this.nationality = nationality;
-        this.fullname = fullname;
         this.nric_passport = nric_passport;
         this.programme = programme;
         this.phone_no = phone_no;
@@ -119,7 +120,7 @@ public class Student {
     }
 
     public String getFullname() {
-        return fullname;
+        return lname + " " + fname;
     }
 
     public void setFullname(String fullname) {

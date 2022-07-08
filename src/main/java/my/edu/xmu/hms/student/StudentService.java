@@ -43,4 +43,15 @@ public class StudentService {
         ));
         return studentDetails;
     }
+
+    public Student updateStudent(Student studentDetails, Long id){
+        if(studentRepository.findById(id).isPresent()){
+            Student studentById = studentRepository.findById(id).get();
+            studentById.setFname(studentDetails.getFname());
+            studentById.setLname(studentDetails.getLname());
+            studentRepository.save(studentById);
+            return studentById;
+        }
+        throw new IllegalStateException("cannot find student with provided id");
+    }
 }

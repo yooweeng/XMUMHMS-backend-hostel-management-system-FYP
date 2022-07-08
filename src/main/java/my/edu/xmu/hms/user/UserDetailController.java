@@ -29,6 +29,11 @@ public class UserDetailController {
         return userDetailService.saveUserDetail(userDetail);
     }
 
+    @PutMapping("{userId}")
+    public UserDetail updateUserDetails(@RequestBody UserDetail userDetails, @PathVariable String userId){
+        return userDetailService.updateUserDetails(userDetails,userId);
+    }
+
     @DeleteMapping("{adminId}")
     public List<UserDetail> deleteUserDetail(@PathVariable String adminId){
         return userDetailService.deleteUserDetail(adminId);

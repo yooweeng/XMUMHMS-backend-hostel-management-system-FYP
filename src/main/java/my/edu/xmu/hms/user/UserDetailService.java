@@ -38,6 +38,16 @@ public class UserDetailService {
         return userDetailRepository.findAll();
     }
 
+    public UserDetail updateUserDetails(UserDetail userDetails, String userId){
+        if(userDetailRepository.findByUserId(userId).isPresent()){
+            UserDetail userDetailByUserId = userDetailRepository.findByUserId(userId).get();
+            userDetailByUserId.setPw(userDetails.getPw());
+            userDetailRepository.save(userDetailByUserId);
+            return userDetailByUserId;
+        }
+        throw new IllegalStateException("no user with the provided user id");
+    }
+
     @Transactional
     public List<UserDetail> deleteUserDetail(String adminId){
         userDetailRepository.deleteByUserId(adminId);
